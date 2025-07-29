@@ -1,0 +1,190 @@
+﻿/* General Body and Layout Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars on the body itself */
+}
+
+form {
+    height: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Header and Navigation */
+.header {
+    background-color: black;
+    color: yellow;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.header-logo {
+    height: 45px; /* Sets a fixed height for the logo */
+    width: auto; /* Allows the width to scale automatically to maintain aspect ratio */
+}
+
+.nav-bar {
+    background-color: yellow;
+    color: black;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .nav-bar a {
+        color: black;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-weight: bold;
+    }
+
+        .nav-bar a:hover {
+            background-color: #333;
+            color: yellow;
+        }
+
+        .nav-bar a.disabled {
+            color: #999;
+            pointer-events: none; /* Disables clicking */
+            cursor: default;
+        }
+
+    .nav-bar .logout-link {
+        color: black;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-weight: bold;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 1em; /* Match font size of other links */
+    }
+
+        .nav-bar .logout-link:hover {
+            background-color: #333;
+            color: yellow;
+        }
+
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1; /* Allows this area to fill available space */
+    overflow-y: auto; /* Adds a scrollbar ONLY if content overflows */
+    padding: 20px;
+}
+
+/* Default Page Specific Content */
+.content-container-default {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100%;
+    text-align: center;
+}
+
+.alternating-text {
+    font-size: 2.5em; /* Large font size */
+    font-weight: bold;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-blue {
+    color: blue;
+}
+
+
+/* Form Styling (Login & Admin) */
+.content-container-form {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-wrapper {
+    text-align: center;
+}
+
+.form-title {
+    color: red;
+    font-weight: bold;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.form-table {
+    border-collapse: collapse;
+    margin: 0 auto; /* This centers the table within the wrapper */
+    width: 400px; /* Give the table a fixed width */
+}
+
+    .form-table td {
+        border: 1px solid black;
+        padding: 8px 12px;
+        text-align: left; /* Align text inside cells to the left */
+    }
+
+    .form-table .input-cell {
+        width: 250px;
+    }
+
+.borderless-input {
+    width: 100%;
+    border: none;
+    outline: none; /* Removes the focus border */
+    background-color: transparent;
+    font-size: 1em;
+    padding: 2px 4px;
+    box-sizing: border-box;
+}
+
+.login-button {
+    background-color: black;
+    color: yellow;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.save-button {
+    background-color: #98FB98; /* A pleasant light green */
+    border: 2px solid darkgreen;
+    font-size: 1.1em;
+    font-weight: normal;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 20px; /* Space between table and button */
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: black;
+    color: white; /* Default text color is now white */
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Utility Classes */
+.text-yellow {
+    color: yellow;
+}

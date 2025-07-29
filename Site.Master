@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="KTSAssignment2.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%-- Link to our central stylesheet --%>
+    <link href="Content/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="page-container">
+            <%-- Sticky Header --%>
+            <div class="header">
+                <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/logo.jpg" AlternateText="Company Logo" CssClass="header-logo" />
+                <asp:Label ID="lblHeaderText" runat="server"></asp:Label>
+                <span class="phone"><asp:Label ID="lblPhoneNumber" runat="server"></asp:Label></span>
+            </div>
+
+            <%-- Navigation Bar --%>
+            <div class="nav-bar">
+                <%-- Left-side navigation links --%>
+                <div>
+                    <asp:HyperLink ID="hlDefault" runat="server" NavigateUrl="~/Default.aspx">Default Page</asp:HyperLink>
+                    <asp:HyperLink ID="hlAdmin" runat="server" NavigateUrl="~/Admin.aspx">Admin Page</asp:HyperLink>
+                </div>
+
+                <%-- Right-side Login/Logout control --%>
+                <div>
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <AnonymousTemplate>
+                            <%-- This shows when the user is NOT logged in --%>
+                            <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="~/Login.aspx">Login as Admin</asp:HyperLink>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <%-- This shows when the user IS logged in --%>
+                            <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click" CssClass="logout-link">Logout of Admin</asp:LinkButton>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+
+            <%-- Main Content Area (this will be filled by other pages) --%>
+            <div class="main-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    <%-- Page-specific content will go here. --%>
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <%-- Sticky Footer --%>
+            <div class="footer">
+                <asp:Label ID="lblFooterText" runat="server"></asp:Label>
+    
+                <span class="text-yellow">
+                    | You are visitor No <asp:Label ID="lblVisitorCount" runat="server"></asp:Label>
+                </span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
