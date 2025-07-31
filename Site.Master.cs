@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Web;
 using System.Web.UI;
 
-namespace KTSAssignment2
+namespace LoginWebApp
 {
     public partial class Site : MasterPage
     {
@@ -23,13 +22,13 @@ namespace KTSAssignment2
                 if (Request.IsAuthenticated)
                 {
                     // User is logged in, enable the Admin link
-                    hlAdmin.CssClass = ""; // Remove any disabling class
+                    hlAdmin.CssClass = "nav-link text-dark fw-bold";
                     hlAdmin.Enabled = true;
                 }
                 else
                 {
                     // User is not logged in, grey out the Admin link
-                    hlAdmin.CssClass = "disabled";
+                    hlAdmin.CssClass = "nav-link disabled text-secondary fw-bold";
                     hlAdmin.Enabled = false;
                 }
             }

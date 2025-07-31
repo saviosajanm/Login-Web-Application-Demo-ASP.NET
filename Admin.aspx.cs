@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace KTSAssignment2
+namespace LoginWebApp
 {
     // The class name "Admin" must match the 'Inherits' attribute in the @Page directive
     public partial class Admin : Page

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KTSAssignment2
+namespace LoginWebApp
 {
 
 

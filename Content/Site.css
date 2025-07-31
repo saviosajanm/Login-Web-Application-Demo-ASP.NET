@@ -1,190 +1,183 @@
-﻿/* General Body and Layout Styling */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100%;
-    overflow: hidden; /* Prevents scrollbars on the body itself */
+﻿/* Custom Styles */
+body {
+    padding-top: 110px;
+    padding-bottom: 60px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden; /* Prevent body scroll, let main content handle it */
 }
 
-form {
-    height: 100%;
+/* Fixed header positioning */
+header.fixed-top {
+    z-index: 1030; /* Above other content */
 }
 
-.page-container {
+/* Fixed footer positioning */
+footer.fixed-bottom {
+    z-index: 1030; /* Above other content */
+}
+
+/* Header text centering */
+header .position-absolute {
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Allow clicks through to elements below */
+}
+
+header h1 {
+    line-height: 1.2;
+}
+
+/* Navigation spacing */
+.navbar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.navbar-nav .nav-link {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+/* Responsive navbar adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        padding-top: 10px;
+    }
+    
+    .navbar-nav {
+        margin-bottom: 10px;
+    }
+    
+    .btn-sm {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 992px) {
+    .ms-lg-2 {
+        margin-left: 0.5rem !important;
+    }
+}
+
+/* Main content scrolling area using Bootstrap */
+.scrollable-main {
+    height: 100vh;
+    padding-top: 110px; /* Space for fixed header */
+    padding-bottom: 60px; /* Space for fixed footer */
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Content centering for all pages */
+.content-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-}
-
-/* Header and Navigation */
-.header {
-    background-color: black;
-    color: yellow;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    box-sizing: border-box; /* Ensures padding is included in the width */
-}
-
-.header-logo {
-    height: 45px; /* Sets a fixed height for the logo */
-    width: auto; /* Allows the width to scale automatically to maintain aspect ratio */
-}
-
-.nav-bar {
-    background-color: yellow;
-    color: black;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-    .nav-bar a {
-        color: black;
-        text-decoration: none;
-        padding: 10px 15px;
-        font-weight: bold;
-    }
-
-        .nav-bar a:hover {
-            background-color: #333;
-            color: yellow;
-        }
-
-        .nav-bar a.disabled {
-            color: #999;
-            pointer-events: none; /* Disables clicking */
-            cursor: default;
-        }
-
-    .nav-bar .logout-link {
-        color: black;
-        text-decoration: none;
-        padding: 10px 15px;
-        font-weight: bold;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: Arial, sans-serif;
-        font-size: 1em; /* Match font size of other links */
-    }
-
-        .nav-bar .logout-link:hover {
-            background-color: #333;
-            color: yellow;
-        }
-
-
-/* Main Content Area */
-.main-content {
-    flex-grow: 1; /* Allows this area to fill available space */
-    overflow-y: auto; /* Adds a scrollbar ONLY if content overflows */
-    padding: 20px;
-}
-
-/* Default Page Specific Content */
-.content-container-default {
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    height: 100%;
-    text-align: center;
+    min-height: 100%;
 }
 
 .alternating-text {
-    font-size: 2.5em; /* Large font size */
+    font-size: 2.5rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .text-red {
-    color: red;
+    color: #dc3545 !important; /* Bootstrap red */
 }
 
 .text-blue {
-    color: blue;
+    color: #0d6efd !important; /* Bootstrap blue */
 }
 
-
-/* Form Styling (Login & Admin) */
-.content-container-form {
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.form-wrapper {
-    text-align: center;
-}
-
-.form-title {
-    color: red;
-    font-weight: bold;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.form-table {
-    border-collapse: collapse;
-    margin: 0 auto; /* This centers the table within the wrapper */
-    width: 400px; /* Give the table a fixed width */
-}
-
-    .form-table td {
-        border: 1px solid black;
-        padding: 8px 12px;
-        text-align: left; /* Align text inside cells to the left */
-    }
-
-    .form-table .input-cell {
-        width: 250px;
-    }
-
-.borderless-input {
-    width: 100%;
+/* Card styling */
+.card {
     border: none;
-    outline: none; /* Removes the focus border */
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    width: 100%; /* Ensures the card takes the full width available */
+    max-width: 100%; /* Ensures the card doesn't exceed its parent's width */
+}
+.card-header {
+    padding: 1rem 1.5rem;
+    background-color: #ffc107 !important; /* Bootstrap warning color */
+}
+
+/* Input styling */
+.form-control.border-0.border-bottom {
     background-color: transparent;
-    font-size: 1em;
-    padding: 2px 4px;
-    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0 !important;
+    border-color: #000 !important;
 }
 
-.login-button {
-    background-color: black;
-    color: yellow;
-    font-weight: bold;
-    border: 1px solid black;
-    padding: 5px 15px;
-    cursor: pointer;
+    .form-control.border-0.border-bottom:focus {
+        box-shadow: none;
+        border-color: #000 !important;
+    }
+
+/* Button styling */
+.btn-dark {
+    background-color: #212529;
+    border-color: #212529;
+    padding: 6px 12px !important;
 }
 
-.save-button {
-    background-color: #98FB98; /* A pleasant light green */
-    border: 2px solid darkgreen;
-    font-size: 1.1em;
-    font-weight: normal;
-    padding: 8px 15px;
-    cursor: pointer;
-    margin-top: 20px; /* Space between table and button */
+.btn-dark:hover {
+    background-color: #000;
+    border-color: #000;
 }
 
-
-/* Footer Styling */
-.footer {
-    background-color: black;
-    color: white; /* Default text color is now white */
-    padding: 15px 20px;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
 }
 
-/* Utility Classes */
-.text-yellow {
-    color: yellow;
+/* Navigation */
+.navbar-dark .navbar-toggler {
+    border-color: rgba(0,0,0,0.5);
+    margin: 10px 0; /* Center toggle button vertically */
 }
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Footer */
+footer {
+    background-color: #212529 !important;
+    font-size: 1.1rem; /* Slightly smaller than header */
+}
+
+footer .badge {
+    font-size: 0.9em; /* Slightly smaller than footer text */
+    vertical-align: middle;
+}
+
+/* Scrollbar styling for webkit browsers */
+main::-webkit-scrollbar,
+.overflow-auto::-webkit-scrollbar {
+    width: 8px;
+}
+
+main::-webkit-scrollbar-track,
+.overflow-auto::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+main::-webkit-scrollbar-thumb,
+.overflow-auto::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+main::-webkit-scrollbar-thumb:hover,
+.overflow-auto::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+

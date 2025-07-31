@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Xml.Serialization;
 
-namespace KTSAssignment2
+namespace LoginWebApp
 {
     public class WebsiteSettings
     {

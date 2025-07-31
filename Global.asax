@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="KTSAssignment2.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="LoginWebApp.Global" Language="C#" %>

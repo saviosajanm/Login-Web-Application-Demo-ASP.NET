@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Web.Security;
 using System.Web.UI;
 
-namespace KTSAssignment2
+namespace LoginWebApp
 {
     public partial class Login : Page
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace KTSAssignment2
+namespace LoginWebApp
 {
     public class Global : System.Web.HttpApplication
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace KTSAssignment2
+namespace LoginWebApp
 {
     public partial class Default : Page
     {

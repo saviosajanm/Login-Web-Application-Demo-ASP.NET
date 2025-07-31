@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WebsiteSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <HeaderText>Hi there</HeaderText>
-  <FooterText>Hi</FooterText>
-  <DefaultPageText1>Hello There!</DefaultPageText1>
-  <DefaultPageText2>This is the alternative text.</DefaultPageText2>
-  <PhoneNumber>90616-12080</PhoneNumber>
-  <VisitorCount>22</VisitorCount>
+  <HeaderText>Header TEXT 3</HeaderText>
+  <FooterText>Footer TEXT 2</FooterText>
+  <DefaultPageText1>This is Page #1!</DefaultPageText1>
+  <DefaultPageText2>This is the second page! 6</DefaultPageText2>
+  <PhoneNumber>98765-43219</PhoneNumber>
+  <VisitorCount>73</VisitorCount>
 </WebsiteSettings>
